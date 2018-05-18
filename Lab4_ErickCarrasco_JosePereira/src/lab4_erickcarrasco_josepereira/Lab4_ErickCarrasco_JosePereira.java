@@ -69,6 +69,21 @@ public class Lab4_ErickCarrasco_JosePereira {
                         lista.remove(po);
                         break;
                     case 4:
+                        int lives1 =16;
+                        int lives2 = 16;
+                        int turn = 0;
+                        Tablero t = new Tablero();
+                        Partida p = new Partida();
+                        do{
+                            if (turn == 0) {
+                                System.out.println();
+                                int x;
+                                int y;
+                                
+                                System.out.println("Ingrese ");
+                            }
+                            
+                        }while(lives1 == 0 ||lives2 ==0);
 
                         break;
                     case 5:

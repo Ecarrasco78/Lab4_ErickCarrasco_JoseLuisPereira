@@ -20,6 +20,8 @@ public class Tablero {
     public Tablero(String[][] tablero) {
         tablero = create(tablero);
         tablero = asign(tablero);
+        Imprimir(tablero);
+        
         
     }
     
@@ -77,9 +79,19 @@ public class Tablero {
         
     }
 
-    @Override
-    public String toString() {
-        return "Tablero{" + "tablero=" + tablero + '}';
+    public void Imprimir (String[][]radar){
+        String M = "";
+        for (int i = 0; i < radar.length; i++) {
+            for (int j = 0; j < radar[i].length; j++) {
+                if(radar[i][j].equals("O")){
+                    M += "[" + " " + radar[i][j] + " " + "]" + " ";
+                }else{
+                    M += "[ " + " " + radar[i][j] + " " + " ]" + " ";
+                }
+            }
+            M += "\n";
+        }
+        
     }
     
     
