@@ -14,12 +14,11 @@ public class Partida{
     int x;
     int y;
 
-    public Partida() {
-    }
 
-    public Partida(String [][] t, int x, int y) {
+    public Partida() {
         this.x = x;
         this.y = y;
+        t = create(t);
         t = asigner (t);
     }
 
@@ -37,6 +36,15 @@ public class Partida{
 
     public void setY(int y) {
         this.y = y;
+    }
+    
+    public String [][] create (String[][]tablero){
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                tablero [i][j]=" ";
+            }
+        }
+        return tablero;
     }
     
     
