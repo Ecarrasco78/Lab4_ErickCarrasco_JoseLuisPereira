@@ -25,6 +25,7 @@ public class Lab4_ErickCarrasco_JosePereira {
                         // cada jugador posee un nombre, nombre de usuario, puntos
                         //actuales (al inicio será 0), Lugar de nacimiento, edad, sexo.
                         System.out.println("***************AGREGAR_JUGADORES***************");
+                        //     lea.next();
                         System.out.println("Ingrese el nombre del jugador 1");
                         String nom = lea.next();
                         System.out.println("Ingrese el nombre de usuario del jugador 1");
@@ -49,6 +50,7 @@ public class Lab4_ErickCarrasco_JosePereira {
                         lista.add(new Jugador(nom2, user2, 0, lugar2, edad2, sex2));
                         break;
                     case 2:
+                        System.out.println("***************LISTAR_JUGADORES***************");
                         for (Object t : lista) {
                             if (t instanceof Jugador) {
                                 System.out.println(lista.indexOf(t) + " " + t);
@@ -56,7 +58,15 @@ public class Lab4_ErickCarrasco_JosePereira {
                         }
                         break;
                     case 3:
-
+                        System.out.println("***************ELIMINAR_JUGADORES***************");
+                        for (Object t : lista) {
+                            if (t instanceof Jugador) {
+                                System.out.println(lista.indexOf(t) + " " + t);
+                            }
+                        }
+                        System.out.println("Ingrese la posicion del jugador que desea eliminar");
+                        int po=lea.nextInt();
+                        lista.remove(po);
                         break;
                     case 4:
 
