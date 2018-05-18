@@ -7,10 +7,10 @@ import java.util.Scanner;
 public class Lab4_ErickCarrasco_JosePereira {
 
     public static void main(String[] args) {
+       
         Scanner lea = new Scanner(System.in);
         int opw = 0, ops = 0, aux = 2;
         ArrayList lista = new ArrayList();
-        try {
             while (opw != 5) {
                 System.out.println("***************MENU***************");
                 System.out.println("1) Agregar Jugadores");
@@ -75,15 +75,52 @@ public class Lab4_ErickCarrasco_JosePereira {
                         Tablero t = new Tablero();
                         Partida p = new Partida();
                         do{
+
                             if (turn == 0) {
                                 System.out.println(t.M);
-                                int x;
-                                int y;
-                                
-                                System.out.println("Ingrese ");
+                                int x = 0;
+                                int y = 0;
+                                boolean validate1 = true;
+                                boolean validate2 = true;
+                                while (validate1) {
+                                    try {
+
+                                        System.out.println("Ingrese la coordenada en x de la ficha a mover");
+                                        x = lea.nextInt();
+                                        verifyX(x);
+                                        validate1=false;
+                                    } catch (miException ex) {
+                                        System.out.println(ex.getMessage());
+                                        validate1=true;
+                                    }
+                                }
+                                while(validate2){
+                                    try {
+                                        System.out.println("Ingrese la coordenada en y de la ficha a mover");
+                                        y = lea.nextInt();
+                                        verifyY(y);
+                                        validate2 = false;
+
+                                    } catch (miException ex) {
+                                        System.out.println(ex.getMessage());
+                                        validate2=true;
+                                    }
+                                }
+                                boolean feik = true;
+                                while (feik) {
+                                    if (p.t[x][y].contains("0")) {
+                                        if (t.tablero[x][y] == "F") {
+
+                                        }
+
+                                    } else {
+                                        System.out.println("Ha escogido una coordenada no valida");
+                                        feik = true;
+                                    }
+                                }
                             }
-                            
-                        }while(lives1 == 0 ||lives2 ==0);
+
+                        } while (lives1 == 0 || lives2 == 0);
 
                         break;
                     case 5:
@@ -92,9 +129,17 @@ public class Lab4_ErickCarrasco_JosePereira {
 
                 }
             }
-        } catch (Exception e) {
-            System.out.println("El dato que ingreso no es valido");
-
+         
+    }
+    
+    static void verifyX (int x)throws miException{
+        if(x<0 || x>9){
+            throw new Error("Out of bounds");
+        }
+    }
+    static void verifyY (int y)throws miException{
+        if(y<0 || y>9){
+            throw new Error("Out of bounds");
         }
     }
 }
