@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package lab4_erickcarrasco_josepereira;
 
 import java.awt.Color;
@@ -31,30 +26,34 @@ public class Lab4_ErickCarrasco_JosePereira {
                         //actuales (al inicio será 0), Lugar de nacimiento, edad, sexo.
                         System.out.println("***************AGREGAR_JUGADORES***************");
                         System.out.println("Ingrese el nombre del jugador 1");
-                        String nom=lea.next();
+                        String nom = lea.next();
                         System.out.println("Ingrese el nombre de usuario del jugador 1");
-                        String user=lea.next();
+                        String user = lea.next();
                         System.out.println("Ingrese el lugar de nacimiento del jugador 1");
-                        String lugar=lea.next();
+                        String lugar = lea.next();
                         System.out.println("Ingrese la edad del jugador 1");
-                        int edad=lea.nextInt();
+                        int edad = lea.nextInt();
                         System.out.println("Ingrese el sexo del jugador 1");
-                        String sex=lea.next();
+                        String sex = lea.next();
                         System.out.println("Ingrese el nombre del jugador 2");
-                        String nom2=lea.next();
+                        String nom2 = lea.next();
                         System.out.println("Ingrese el nombre de usuario del jugador 2");
-                        String user2=lea.next();
+                        String user2 = lea.next();
                         System.out.println("Ingrese el lugar de nacimiento del jugador 2");
-                        String lugar2=lea.next();
+                        String lugar2 = lea.next();
                         System.out.println("Ingrese la edad del jugador 2");
-                        int edad2=lea.nextInt();
+                        int edad2 = lea.nextInt();
                         System.out.println("Ingrese el sexo del jugador 2");
-                        String sex2=lea.next();
-                        lista.add(new Jugador(nom,user,0,lugar,edad,sex));
-                        lista.add(new Jugador(nom2,user2,0,lugar2,edad2,sex2));
+                        String sex2 = lea.next();
+                        lista.add(new Jugador(nom, user, 0, lugar, edad, sex));
+                        lista.add(new Jugador(nom2, user2, 0, lugar2, edad2, sex2));
                         break;
                     case 2:
-
+                        for (Object t : lista) {
+                            if (t instanceof Jugador) {
+                                System.out.println(lista.indexOf(t) + " " + t);
+                            }
+                        }
                         break;
                     case 3:
 
