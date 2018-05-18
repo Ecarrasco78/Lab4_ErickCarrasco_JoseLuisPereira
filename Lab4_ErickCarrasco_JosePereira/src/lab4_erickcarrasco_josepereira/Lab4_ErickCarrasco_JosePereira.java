@@ -76,7 +76,7 @@ public class Lab4_ErickCarrasco_JosePereira {
                         Partida p = new Partida();
                         do{
                             if (turn == 0) {
-                                System.out.println();
+                                System.out.println(t.M);
                                 int x;
                                 int y;
                                 

@@ -12,15 +12,23 @@ package lab4_erickcarrasco_josepereira;
 public class Tablero {
     String[][] tablero = new String [10][10];
     int color;
+    String M="";
+
     
 
     public Tablero() {
-    }
-
-    public Tablero(String[][] tablero) {
         tablero = create(tablero);
         tablero = asign(tablero);
-        Imprimir(tablero);
+        for (int i = 0; i < tablero.length; i++) {
+            for (int j = 0; j < tablero[i].length; j++) {
+                if(tablero[i][j].equals(" ")){
+                    M += "[" + "" + tablero[i][j] + "" + "]" + " ";
+                }else{
+                    M += "[" + "" + tablero[i][j] + "" + "]" + " ";
+                }
+            }
+            M += "\n";
+        }
         
         
     }
@@ -78,21 +86,5 @@ public class Tablero {
         return tablero;
         
     }
-
-    public void Imprimir (String[][]radar){
-        String M = "";
-        for (int i = 0; i < radar.length; i++) {
-            for (int j = 0; j < radar[i].length; j++) {
-                if(radar[i][j].equals("O")){
-                    M += "[" + " " + radar[i][j] + " " + "]" + " ";
-                }else{
-                    M += "[ " + " " + radar[i][j] + " " + " ]" + " ";
-                }
-            }
-            M += "\n";
-        }
-        
-    }
-    
     
 }
